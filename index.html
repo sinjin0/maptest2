@@ -9,7 +9,7 @@
         // Geolocation API에 액세스할 수 있는지를 확인
         if (navigator.geolocation) {
             //위치 정보를 얻기
-            navigator.geolocation.getCurrentPosition (function(pos) {
+            navigator.geolocation.watchPosition (function(pos) {
                 $('#latitude').html(pos.coords.latitude);     // 위도
                 $('#longitude').html(pos.coords.longitude); // 경도
             });
