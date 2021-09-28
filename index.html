@@ -9,6 +9,7 @@
      		<li>위도:<span id="latitude"></span></li>
       		<li>경도:<span id="longitude"></span></li>
 		<li>오류:<span id="myLocation"></span></li>
+		<li>msg:<span id="mymsg"></span></li>
   	</ul>
 	
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7f0ea57fbca0a4cadfffa7ea104b25cf"></script>
@@ -17,6 +18,7 @@
 		
 		var start = FindLocation();
 		var loc = document.getElementById("myLocation");
+		var msg = document.getElementById("mymsg");
 	  function FindLocation() {
       		 if( navigator.geolocation) {
        		    navigator.geolocation.getCurrentPosition(setCenter,showErrorMsg);
@@ -31,9 +33,10 @@
     		 document.getElementById("longitude").innerHTML = position.coords.longitude;
 	 }
 		function showErrorMsg(error) {
+			mymsg.innerHTML = error.message;
 			switch(error.code) {
 				case error.PERMISSION_DENIED:
-				loc.innerHTML = "이 문장은 사용자가 Geolocation API의 사용 요청을 거부했을 때 나타납니다!"
+				loc.innerHTML = "이 문장은 사용자가 Geolocation API의 사용 요청을 거부했을 때 나타납니다!					
 				break;
 				case error.POSITION_UNAVAILABLE:
 				loc.innerHTML = "이 문장은 가져온 위치 정보를 사용할 수 없을 때 나타납니다!"
