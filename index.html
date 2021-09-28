@@ -33,7 +33,7 @@
     		 document.getElementById("longitude").innerHTML = position.coords.longitude;
 	 }
 		function showErrorMsg(error) {
-			mymsg.innerHTML = error.message;
+			msg.innerHTML = error.message;
 			switch(error.code) {
 				case error.PERMISSION_DENIED:
 				loc.innerHTML = "이 문장은 사용자가 Geolocation API의 사용 요청을 거부했을 때 나타납니다!					
