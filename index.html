@@ -18,9 +18,14 @@
 		var start = FindLocation();
 		var loc = document.getElementById("myLocation");
 		var msg = document.getElementById("mymsg");
+		var posOptions = {
+			enableHighAccuracy: false,
+  			timeout: 20000,
+  			maximumAge: 0
+		}
 	  function FindLocation() {
       		 if( navigator.geolocation) {
-       		    navigator.geolocation.getCurrentPosition(setCenter,showErrorMsg);
+       		    navigator.geolocation.getCurrentPosition(setCenter,showErrorMsg,posOptions);
       		 } else {
          		  loc.innerHTML = "이 문장은 사용자의 웹 브라우저가 Geolocation API를 지원하지 않을 때 나타납니다!";
      	 	}
