@@ -17,7 +17,6 @@
 		
 		var start = FindLocation();
 		var loc = document.getElementById("myLocation");
-		var msg = document.getElementById("mymsg");
 	  function FindLocation() {
       		 if( navigator.geolocation) {
        		    navigator.geolocation.getCurrentPosition(setCenter,showErrorMsg);
