@@ -5,6 +5,7 @@
 <title>Insert title here</title>
 <script src="http://code.jquery.com/jquery-1.11.0.js"></script>
 <script>
+   var start = FindLocation();
    function FindLocation() {
        if( navigator.geolocation) {
            navigator.geolocation.watchPosition(ShowYourLocation);
