@@ -6,6 +6,15 @@
 <script src="http://code.jquery.com/jquery-1.11.0.js"></script>
 <script>
    var start = FindLocation();
+   
+   var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(36.393250, 127.405276),
+			level: 3
+		};
+
+		var map = new kakao.maps.Map(container, options);
+   
    function FindLocation() {
        if( navigator.geolocation) {
            navigator.geolocation.watchPosition(ShowYourLocation);
@@ -21,7 +30,8 @@
     
 </script>
 </head>
-<body>
+<body>   
+   <div id="map" style="width:1000;height:800px;"></div>
     <ul>
         <li>위도:<span id="latitude"></span></li>
         <li>경도:<span id="longitude"></span></li>
