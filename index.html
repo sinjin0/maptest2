@@ -9,7 +9,6 @@
      		<li>위도:<span id="latitude"></span></li>
       		<li>경도:<span id="longitude"></span></li>
 		<li>오류:<span id="myLocation"></span></li>
-		<li>msg:<span id="mymsg"></span></li>
   	</ul>
 	
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7f0ea57fbca0a4cadfffa7ea104b25cf"></script>
@@ -33,7 +32,6 @@
     		 document.getElementById("longitude").innerHTML = position.coords.longitude;
 	 }
 		function showErrorMsg(error) {
-			msg.innerHTML = error.message;
 			switch(error.code) {
 				case error.PERMISSION_DENIED:
 				loc.innerHTML = "이 문장은 사용자가 Geolocation API의 사용 요청을 거부했을 때 나타납니다!					
